@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sampleproject
+  labels:
+    app: sampleproject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sampleproject
+  template:
+    metadata:
+      labels:
+        app: sampleproject
+    spec:
+      containers:
+        - name: sampleproject
+          image: gcr.io/nodejs-k8s-350419/sampleproject
+          ports:
+            - containerPort: 3000
