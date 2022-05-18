@@ -6,6 +6,10 @@ app.use(bodyparser.json());
 let { productData } = require("./productData")
 
 // define a route handler for the default home page
+app.get( "/", ( req, res ) => {
+    res.send("Welcome to Product Management Page");
+});
+
 app.get( "/products", ( req, res ) => {
     res.send(productData);
 });
