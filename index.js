@@ -6,7 +6,7 @@ app.use(bodyparser.json());
 let { productData } = require("./productData")
 
 // define a route handler for the default home page
-app.get( "/", ( req, res ) => {
+app.get( "/products", ( req, res ) => {
     res.send(productData);
 });
 
@@ -50,7 +50,7 @@ app.delete("/product/delete/:id", (req, res) => {
     let id = +req.params.id;
     let index = productData.findIndex((prod) => prod.id === id);
     if(index >= 0) {
-        let deletedStudent = productData.splice(index, 1);
-        res.send(deletedStudent);
+        let deletedProduct = productData.splice(index, 1);
+        res.send(deletedProduct);
     }else res.status(404).send("No Product Found")
 })
