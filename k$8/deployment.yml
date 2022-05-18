@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: sampleproject
-          image: gcr.io/nodejs-k8s-350419/github.com/mahirazeem/ctseassignment
+          image: gcr.io/nodejs-k8s-350419/sampleproject:v1
           ports:
             - containerPort: 3000
